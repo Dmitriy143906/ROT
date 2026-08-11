@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#070707" />
+  <title>RØT — Admin</title>
+  <link rel="stylesheet" href="/static/admin.css" />
+</head>
+<body>
+  <div class="noise"></div>
+
+  <section id="loginView" class="login-view">
+    <form id="loginForm" class="login-card">
+      <div class="mark">RØT</div>
+      <div class="kicker">ADMINISTRATION</div>
+      <h1>ВХОД В ЯДРО</h1>
+      <p>Закрытый кабинет командования RØT.</p>
+      <label>Логин<input name="username" autocomplete="username" required /></label>
+      <label>Пароль<input name="password" type="password" autocomplete="current-password" required /></label>
+      <button type="submit">ВОЙТИ</button>
+      <div id="loginStatus" class="status"></div>
+      <a class="back" href="/">← На сайт</a>
+    </form>
+  </section>
+
+  <section id="dashboardView" class="dashboard hidden">
+    <aside class="sidebar">
+      <div>
+        <a class="brand" href="/"><b>RØT</b><span>ADMIN CORE</span></a>
+        <nav>
+          <button class="nav-button active" data-filter="all">Все заявки</button>
+          <button class="nav-button" data-filter="new">Новые</button>
+          <button class="nav-button" data-filter="accepted">Принятые</button>
+          <button class="nav-button" data-filter="rejected">Отклонённые</button>
+        </nav>
+      </div>
+      <button id="logoutButton" class="logout">Выйти</button>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <div>
+          <div class="kicker">☣ RØT / RECRUITMENT CONTROL</div>
+          <h1>ЗАЯВКИ В КЛАН</h1>
+        </div>
+        <div id="adminUser" class="admin-user"></div>
+      </header>
+
+      <section class="stats" id="stats"></section>
+
+      <section class="toolbar">
+        <input id="searchInput" type="search" placeholder="Поиск по Discord, роли, Steam..." />
+        <button id="refreshButton">Обновить</button>
+      </section>
+
+      <div id="listStatus" class="list-status"></div>
+      <section id="applications" class="applications"></section>
+    </main>
+  </section>
+
+  <dialog id="detailDialog" class="detail-dialog">
+    <button id="closeDialog" class="close-dialog" aria-label="Закрыть">×</button>
+    <div id="detailContent"></div>
+  </dialog>
+
+  <script src="/static/admin.js"></script>
+</body>
+</html>
